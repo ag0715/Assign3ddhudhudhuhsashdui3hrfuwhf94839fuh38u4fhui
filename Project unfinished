@@ -1,0 +1,80 @@
+import csv
+with open('scratch.csv', 'r', errors='replace') as progfile:
+    progfile.close()
+a = open("scratch.csv")
+filter = csv.reader(a)
+
+# Step 2: Printing
+columns = { 0: 'Company', 1: 'Booth', 2: 'Full-Time', 3: 'Full-Time Visa Sponsor', 4: 'Part-Time', 5: 'Internship', 6: 'Freshman', 7: 'Sophomore', 8: 'Junior', 9: 'Senior', 10: 'Post-Bacs', 11: 'MS', 12: 'PhD', 13: 'Alumni', }
+for i in columns:
+    print(i, columns[i])
+
+# Step 3: Filtering and Formatting
+UniRows = []
+RRows = 0
+for rows in filter:
+    RRows += 1
+    if RRows > 3 and RRows < 34 and rows[0] is not '':
+        UniRows.append(rows)
+
+#Step 4 Expected output
+employersSummary = {'No.': ('Column', 'Sum')}
+for output in range(14):
+    total = 0
+    for rrows in UniRows:
+        if rrows[output] is not '':
+            total += 1
+    employersSummary[output] = (columns[output], total)
+print(employersSummary)
+
+#Step 4 continued
+twoColumns = {
+    0: 'AIG',
+    1: 'Baylor College of Medicine',
+    2: 'CGG',
+    3: 'Citi',
+    4: 'ExxonMobil',
+    5: 'Flow-Cal Inc.',
+    6: 'Global Shop Solutions',
+    7: 'Harris County CTS',
+    8: 'HCSS',
+    9: 'Hitachi Consulting',
+    10:'HP Inc.',
+    11: 'INT Inc.',
+    12: 'JPMorgan Chase & Co',
+    13: 'Leidos',
+    14: 'McKesson',
+    15: 'MRE Consulting Ltd.',
+    16: 'NetIQ',
+    17: 'PROS',
+    18: 'San Jacinto College',
+    19: 'SAS',
+    20: 'Smartbridge',
+    21: 'Sogeti USA',
+    22: 'Southwest Research Institute',
+    23: 'The Reynolds and Reynolds Company ',
+    24: 'UH Enterprise Systems',
+    25: 'U.S. Marine Corps',
+    26: 'ValuD Consuting LLC',
+    27: 'Wipro',}
+for i in twoColumns:
+    print(i, twoColumns[i])
+
+#Step 4 continued
+
+Uni2Rows = []
+R2Rows = 0
+for rows in line:
+    R2Rows += 1
+    if R2Rows > 34 and R2Rows < 66 and rows[0] is not '':
+        UniRows.append(rows)
+
+
+GradUnderGrad = {'No.': ('Company', 'Grad', 'UnderGrad')}
+for out2put in range(28):
+    total = 0
+    for r2rows in Uni2Rows:
+        if r2rows[out2put] is not '':
+            total += 1
+    GradUnderGrad[out2put] = (twoColumns[out2put], total)
+print(GradUnderGrad)
