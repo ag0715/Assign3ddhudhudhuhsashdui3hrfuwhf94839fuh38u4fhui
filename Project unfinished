@@ -1,6 +1,7 @@
 ####please dont copy straight up its like stealing an essay some things you cant really change theres only so many ways to do it 
 ####but dont just straight up copy you will fail and you will get caught 
 ###write your own dont play yourself thanks 
+##Code by Angel M Gonzalez 
 
 import csv
 with open('scratch.csv', 'r', errors='replace') as progfile:
