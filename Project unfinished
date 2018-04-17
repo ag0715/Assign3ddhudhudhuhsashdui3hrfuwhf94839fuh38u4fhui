@@ -1,12 +1,9 @@
-####please dont copy straight up its like stealing an essay some things you cant really change theres only so many ways to do it 
-####but dont just straight up copy you will fail and you will get caught 
-###write your own dont play yourself thanks 
-##Code by Angel M Gonzalez 
-
+#Had to use my own csv file as the one from Piazza did not run correctly
 import csv
 with open('scratch.csv', 'r', errors='replace') as progfile:
     progfile.close()
 a = open("scratch.csv")
+line = csv.reader(a)
 filter = csv.reader(a)
 
 # Step 2: Printing
@@ -69,14 +66,14 @@ for i in twoColumns:
 
 Uni2Rows = []
 R2Rows = 0
-for rows in line:
+for rows in filter:
     R2Rows += 1
-    if R2Rows > 34 and R2Rows < 66 and rows[0] is not '':
-        UniRows.append(rows)
+    if R2Rows > 3 and R2Rows < 34 and rows[0] is not '':
+        Uni2Rows.append(rows)
 
 
 GradUnderGrad = {'No.': ('Company', 'Grad', 'UnderGrad')}
-for out2put in range(28):
+for out2put, in enumerate(Uni2Rows):
     total = 0
     for r2rows in Uni2Rows:
         if r2rows[out2put] is not '':
