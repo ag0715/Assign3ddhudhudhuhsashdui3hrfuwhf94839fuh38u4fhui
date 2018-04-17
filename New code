@@ -1,0 +1,9 @@
+GradUnderGrad = [["No", "Company", "Grad", "UnderGrad"]]
+for i, out2put in enumerate(Uni2Rows):
+    total = 0
+    for roww in Uni2Rows[11:12]:
+        if roww[out2put] is not '':
+            GradUnderGrad.append(["No", "Company_name", "Grad_1_0", "Undergrad_1_0"])
+            total += 1
+    GradUnderGrad[out2put] = (twoColumns[out2put], total)
+print(GradUnderGrad)
