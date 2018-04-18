@@ -8,9 +8,9 @@ for rows in filter:
 
 GradUnderGrad = [["No", "Company", "Grad", "UnderGrad"]]
 for i, out2put in enumerate(Uni2Rows):
-    total = 0
+    total = 1
     for roww in Uni2Rows[11:12]:
         if roww[out2put] is not '':
             total += 1
-GradUnderGrad.append(['No', twoColumns, Uni2Rows[11], Uni2Rows[12]])
+        GradUnderGrad.append([Uni2Rows, out2put, columns[11:], columns[12:]])
 print(GradUnderGrad)
